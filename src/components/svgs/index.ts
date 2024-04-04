@@ -1,0 +1,5 @@
+export { default as IconLink } from "./icon-link.svg"
+export { default as IconArrowRight } from "./icon-arrow-right.svg"
+export { default as IconDate } from "./icon-date.svg"
+export { default as IconCopy } from "./icon-copy.svg"
+export { default as IconEmpty } from "./icon-empty.svg"
