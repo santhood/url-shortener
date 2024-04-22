@@ -1,7 +1,7 @@
 "use client"
 
 import { getShortenedUrl } from "@/services/shortening-service"
-import { createContext, useContext, useState } from "react"
+import { SetStateAction, createContext, useContext, useState } from "react"
 
 interface ShortenedLinksProps {
   shortened_link: string
@@ -18,6 +18,7 @@ interface ShortenerContextProps {
   shortenedLinks: ShortenedLinksProps[]
   addShortenedLink: (newUrl: string) => void
   urlError: boolean
+  setUrlError: React.Dispatch<SetStateAction<boolean>>
 }
 
 const ShortenerContext = createContext<ShortenerContextProps | null>(null)
@@ -42,7 +43,7 @@ export function ShortenerProvider({ children }: { children: React.ReactNode }) {
 
   return (
     <ShortenerContext.Provider
-      value={{ urlError, shortenedLinks, addShortenedLink }}
+      value={{ urlError, shortenedLinks, setUrlError, addShortenedLink }}
     >
       {children}
     </ShortenerContext.Provider>
