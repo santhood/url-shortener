@@ -31,6 +31,7 @@ export function ShortenerProvider({ children }: { children: React.ReactNode }) {
 
   const addShortenedLink = async (newUrl: string) => {
     const shortenedUrl = (await getShortenedUrl(newUrl)) as ShorteningService
+    console.log(newUrl)
 
     // check if the url is not valid
     if (!shortenedUrl.UrlError) {
