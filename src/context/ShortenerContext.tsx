@@ -35,7 +35,7 @@ export function ShortenerProvider({ children }: { children: React.ReactNode }) {
 
     // check if the url is not valid
     if (!shortenedUrl.UrlError) {
-      setShortenedLinks((prev) => [...prev, shortenedUrl.data])
+      setShortenedLinks((prev) => [...prev, shortenedUrl.data].reverse())
       setUrlError(false)
     } else {
       setUrlError(true)
